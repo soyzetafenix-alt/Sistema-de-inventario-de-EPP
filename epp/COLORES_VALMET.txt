@@ -1,0 +1,36 @@
+COLORES VALMET - SISTEMA EPP
+=============================
+
+PALETA DE COLORES UTILIZADA:
+
+Azul Oscuro (Principal):    #003d7a
+Azul Claro (Acentos):       #0066cc
+Azul Más Claro (Hover):     #0052a3
+Gris Claro (Fondos):        #f8f9fa
+Gris (Texto secundario):    #666
+Gris Oscuro (Texto):        #333
+Blanco (Fondo):             #ffffff
+
+GRADIENTES:
+===========
+Navbar y Login:             linear-gradient(135deg, #003d7a 0%, #0066cc 100%)
+
+APLICACIONES:
+=============
+- Navbar (encabezados)      → Gradiente Azul
+- Botones primarios         → Azul claro (#0066cc)
+- Botones hover             → Azul oscuro (#0052a3)
+- Focus en inputs           → Border azul + shadow azul
+- Login                     → Gradiente azul + Logo Valmet
+- Fondo general             → Blanco/Gris claro
+- Texto                     → Gris oscuro/Azul oscuro
+
+CAMBIOS REALIZADOS:
+===================
+✓ dashboard.php             - Colores actualizados
+✓ employees_new.php         - Colores actualizados
+✓ employees_search.php      - Colores actualizados
+✓ employee_profile.php      - Colores actualizados
+✓ index.html (login)        - Completamente rediseñado con Valmet
+
+El sistema ahora refleja la identidad visual de Valmet.

@@ -1,0 +1,44 @@
+-- CONSULTAS PARA BORRAR DATOS DE EPPS - SOLAMENTE DATOS
+-- NO modifica triggers, índices, ni funciones
+-- Mantiene intactos: app_users, employees, job_positions
+
+-- PASO 1: Borrar auditoría de precios (depende de epp_records)
+DELETE FROM public.price_audit;
+
+-- PASO 2: Borrar registros de entrega de EPPs (historial de entregas)
+DELETE FROM public.epp_records;
+
+-- PASO 3: Borrar movimientos de stock de EPPs
+DELETE FROM public.epp_stock_movements;
+
+-- PASO 4: Borrar historial de cambios de EPPs
+DELETE FROM public.epp_change_history;
+
+-- PASO 5: Borrar relación entre EPPs y cargos
+DELETE FROM public.epp_item_job_position;
+
+-- PASO 6: Borrar catálogo de EPPs
+DELETE FROM public.epp_items;
+
+-- PASO 7: Resetear secuencias de IDs (opcional, pero recomendado)
+ALTER SEQUENCE public.price_audit_id_seq RESTART WITH 1;
+ALTER SEQUENCE public.epp_records_id_seq RESTART WITH 1;
+ALTER SEQUENCE public.epp_stock_movements_id_seq RESTART WITH 1;
+ALTER SEQUENCE public.epp_change_history_id_seq RESTART WITH 1;
+ALTER SEQUENCE public.epp_item_job_position_id_seq RESTART WITH 1;
+ALTER SEQUENCE public.epp_items_id_seq RESTART WITH 1;
+
+-- Confirmación: Estos datos permanecen intactos
+-- - app_users (usuarios de la aplicación)
+-- - employees (empleados)
+-- - job_positions (posiciones de trabajo)
+
+--
+-- ============================================================================
+-- GESTIÓN DE APP_USERS
+-- ============================================================================
+--
+
+-- Borrar todos los app_users EXCEPTO administradorEPP
+DELETE FROM public.app_users 
+WHERE username != 'administradorEPP';
