@@ -190,8 +190,8 @@ http://localhost/mi-proyecto
 
 ---
 ## ✅ Cuenta para ingresar al sistema
-Usuario: administradorEPP
-Contraseña: VALMETEPP
-Una vez entren podran crear otras cuentas mediante el boton crear usuario
+- Usuario: administradorEPP
+- Contraseña: VALMETEPP
+- Una vez entren podran crear otras cuentas mediante el boton crear usuario
 ---
 
