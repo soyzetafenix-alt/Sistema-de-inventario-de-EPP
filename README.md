@@ -136,31 +136,6 @@ if (!$dbconn) {
 }
 ?>
 ```
-
-### Opción B — `conexiones.php` con PDO (recomendado, moderno)
-
-```php
-<?php
-// conexiones.php - usando PDO (PostgreSQL)
-$host = 'localhost';
-$port = '5432';
-$dbname = 'proyecto_db';
-$user = 'postgres';
-$password = 'TU_CONTRASENA';
-
-$dsn = "pgsql:host={$host};port={$port};dbname={$dbname};";
-
-try {
-    $pdo = new PDO($dsn, $user, $password, [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-    ]);
-    // $pdo está listo para usarse en el proyecto
-} catch (PDOException $e) {
-    die("Error: no se pudo conectar a la base de datos. Mensaje: " . $e->getMessage());
-}
-?>
-```
-
 > Reemplaza `TU_CONTRASENA` por la contraseña real que usaron al instalar PostgreSQL.
 
 ---
